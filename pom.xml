@@ -13,6 +13,7 @@
     <modules>
         <module>project-api</module>
         <module>project-provider-user-8001</module>
+        <module>project-web-80</module>
     </modules>
 
     <!--统一管理jar包版本-->
