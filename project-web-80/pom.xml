@@ -18,6 +18,15 @@
             <artifactId>project-api</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+
+        <!--eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+
         <!-- actuator监控信息完善  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

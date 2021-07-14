@@ -1,11 +1,23 @@
 server:
   port: 80
-  
-  
-#eureka:
-#  client:
-#    register-with-eureka: false
-#    service-url:
-#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-#
-#
+
+spring:
+  application:
+    name: project-web-80
+
+
+eureka:
+  instance:
+    instance-id: project-web-80
+    prefer-ip-address: true
+  client:
+    #fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka.mapei.com:7001/eureka/ #Eureka地址
+
+info:
+  app.name: mapei-springCloud-demo
+  company.name: www.mapei.com
+  build.artifactId: ${project.artifactId}
+  build.version:  ${project.version}

@@ -1,7 +1,13 @@
 server:
   port: 7001
 
+spring:
+  application:
+    name: project-eureka
+
 eureka:
+#  server:
+#    enable-self-presercation: false  #禁用自我保护
   instance:
     hostname: eureka.mapei.com #eureka服务端的实例名称
   client:
