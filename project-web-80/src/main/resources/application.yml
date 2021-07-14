@@ -14,7 +14,7 @@ eureka:
     #fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://eureka.mapei.com:7001/eureka/ #Eureka地址
+      defaultZone: http://eureka7001.mapei.com:7001/eureka/,http://eureka7002.mapei.com:7002/eureka/ #Eureka地址
 
 info:
   app.name: mapei-springCloud-demo

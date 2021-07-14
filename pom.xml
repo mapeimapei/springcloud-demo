@@ -15,6 +15,7 @@
         <module>project-provider-user-8001</module>
         <module>project-web-80</module>
         <module>project-eureka-7001</module>
+        <module>project-eureka-7002</module>
     </modules>
 
     <!--统一管理jar包版本-->
