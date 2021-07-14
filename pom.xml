@@ -14,6 +14,7 @@
         <module>project-api</module>
         <module>project-provider-user-8001</module>
         <module>project-web-80</module>
+        <module>project-eureka-7001</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -98,6 +99,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
             </plugin>
         </plugins>
     </build>
