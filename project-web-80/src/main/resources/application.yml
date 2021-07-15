@@ -16,6 +16,11 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.mapei.com:7001/eureka/,http://eureka7002.mapei.com:7002/eureka/ #Eureka地址
 
+feign:
+  hystrix:
+    enabled: true # fegin默认关闭hystrix服务
+
+
 info:
   app.name: mapei-springCloud-demo
   company.name: www.mapei.com
