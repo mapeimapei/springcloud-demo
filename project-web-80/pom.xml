@@ -18,19 +18,21 @@
             <artifactId>project-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-
         <!--eureka-client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
-
         <!-- actuator监控信息完善  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!--openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <dependency>
@@ -51,9 +53,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
-
-
-
         <!-- 增加对PageHelper的支持 -->
         <dependency>
             <groupId>com.github.pagehelper</groupId>

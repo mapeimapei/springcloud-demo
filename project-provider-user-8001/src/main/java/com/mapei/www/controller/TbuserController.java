@@ -28,8 +28,9 @@ public class TbuserController {
     }
 
     @RequestMapping(value = "/user/get/{id}", method = RequestMethod.GET)
-    public TbUser get(@PathVariable("id") String id)
+    public TbUser findById(@PathVariable("id") String id)
     {
+
         return tbUserService.findById(id);
     }
 

@@ -2,6 +2,7 @@ package com.mapei.www.controller;
 
 import java.util.List;
 
+import com.mapei.www.service.TbUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,10 @@ import com.mapei.www.entity.TbUser;
 
 @RestController
 public class TbUserController {
-    private static final String REST_URL_PREFIX = "http://user.mapei.com:8001";
+    @Autowired
+    TbUserService tbUserService;
+
+    //private static final String REST_URL_PREFIX = "http://user.mapei.com:8001";
 
     /**
      * 使用 使用restTemplate访问restful接口非常的简单粗暴无脑。 (url, requestMap,
@@ -30,9 +34,10 @@ public class TbUserController {
 
 
     @RequestMapping(value = "/api2/user/get/{id}")
-    public TbUser get(@PathVariable("id") String id)
+    public TbUser findById(@PathVariable("id") String id)
     {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/user/get/" + id, TbUser.class);
+        return tbUserService.findById(id);
+        //return restTemplate.getForObject(REST_URL_PREFIX + "/user/get/" + id, TbUser.class);
     }
 
 
@@ -40,7 +45,8 @@ public class TbUserController {
     @RequestMapping(value = "/api2/user/list")
     public List<TbUser> list()
     {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/user/list", List.class);
+        return tbUserService.list();
+        //return restTemplate.getForObject(REST_URL_PREFIX + "/user/list", List.class);
     }
 
 
