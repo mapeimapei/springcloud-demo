@@ -4,8 +4,6 @@ import com.mapei.www.entity.TbUser;
 import com.mapei.www.service.TbUserService;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;

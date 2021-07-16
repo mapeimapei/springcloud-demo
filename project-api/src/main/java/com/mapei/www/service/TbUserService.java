@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Component
-@FeignClient(name="project-user-8001",fallbackFactory= TbUserFallbackServieImpl.class)
+@FeignClient(name="project-zuul-gateway-9501",fallbackFactory= TbUserFallbackServieImpl.class)
 public interface TbUserService {
 
-    @RequestMapping(value = "/user/get/{id}")
+    @RequestMapping(value = "/gateway/user/user/get/{id}")
     public TbUser findById(@PathVariable("id") String id);
 
-    @RequestMapping(value = "/user/list")
+    @RequestMapping(value = "/gateway/user/user/list")
     public List<TbUser> list();
 
 }
