@@ -1,8 +1,13 @@
 package com.mapei.www.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.mapei.www.result.ExceptionMsg;
+import com.mapei.www.result.ResponseData;
 import com.mapei.www.service.TbUserService;
+import com.mapei.www.util.Assgin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,18 +39,26 @@ public class TbUserController {
 
 
     @RequestMapping(value = "/api2/user/get/{id}")
-    public TbUser findById(@PathVariable("id") String id)
+    public ResponseData findById(@PathVariable("id") String id) throws Exception
     {
-        return tbUserService.findById(id);
+        TbUser user = tbUserService.findById(id);
+
+        Map<String, Object> addProperties = new HashMap();
+        addProperties.put("token","aaaaaaaaaaaaaaa121212432534");
+        Object loginInf = Assgin.main(user, addProperties);
+
+
+        return new ResponseData(ExceptionMsg.SUCCESS, loginInf);
         //return restTemplate.getForObject(REST_URL_PREFIX + "/user/get/" + id, TbUser.class);
     }
 
 
     @SuppressWarnings("unchecked")
     @RequestMapping(value = "/api2/user/list")
-    public List<TbUser> list()
+    public ResponseData  list() throws Exception
     {
-        return tbUserService.list();
+        List<TbUser> ll = tbUserService.list();
+        return new ResponseData(ExceptionMsg.SUCCESS, ll);
         //return restTemplate.getForObject(REST_URL_PREFIX + "/user/list", List.class);
     }
 

@@ -23,15 +23,21 @@ public class TbuserController {
     private TbUserService tbUserService;
 
     @RequestMapping(value = "/user/list", method = RequestMethod.GET)
-    public List<TbUser> SelectTbUser(){
+    public List<TbUser> SelectTbUser() throws Exception{
         return tbUserService.SelectTbUser();
     }
 
     @RequestMapping(value = "/user/get/{id}", method = RequestMethod.GET)
-    public TbUser findById(@PathVariable("id") String id)
-    {
+    public TbUser findById(@PathVariable("id") String id) throws Exception {
+        TbUser user = tbUserService.findById(id);
+        if (user != null){
+            return user;
+        }else{
 
-        return tbUserService.findById(id);
+            throw new Exception("未查询到信息");
+        }
+
+
     }
 
 
