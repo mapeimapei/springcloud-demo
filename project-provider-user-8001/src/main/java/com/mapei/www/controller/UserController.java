@@ -18,8 +18,10 @@ public class UserController {
     @RequestMapping(value = "/user/getUser", method = RequestMethod.GET)
     public Object getUser(@RequestParam(value="username", required=true) String username) throws Exception
     {
-        Object user = (User)userService.getUser(username);
-
+        User user = userService.getUser(username);
+        System.out.println(user);
         return user;
     }
+
+
 }
