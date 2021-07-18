@@ -4,6 +4,7 @@ import com.mapei.www.entity.TbUser;
 import com.mapei.www.service.TbUserService;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,13 @@ public class TbUserFallbackServieImpl implements FallbackFactory<TbUserService>
     public TbUserService create(Throwable throwable)
     {
         return new TbUserService() {
+
+            @Override
+            public Object getUser(String username){
+                return "AAA失败了";
+            }
+
+
             @Override
             public List<TbUser> list(){
                 TbUser user = new TbUser();
