@@ -1,21 +1,20 @@
 package com.mapei.www.service.impl;
 
 import com.mapei.www.entity.TbUser;
-import com.mapei.www.service.TbUserService;
+import com.mapei.www.service.ApiMainService;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component // 不要忘记添加，不要忘记添加
-public class TbUserFallbackServieImpl implements FallbackFactory<TbUserService>
+public class TbUserFallbackServieImpl implements FallbackFactory<ApiMainService>
 {
     @Override
-    public TbUserService create(Throwable throwable)
+    public ApiMainService create(Throwable throwable)
     {
-        return new TbUserService() {
+        return new ApiMainService() {
 
             @Override
             public Object getUser(String username){

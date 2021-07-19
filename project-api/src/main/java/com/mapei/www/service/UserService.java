@@ -9,14 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Component
-public interface TbUserService {
-    @RequestMapping(value = "/gateway/user/user/list")
-    public List<TbUser> list();
+public interface UserService {
 
-    @RequestMapping(value = "/gateway/user/user/get/{id}")
-    public TbUser findById(@PathVariable("id") String id);
-
-
+    @RequestMapping(value = "/gateway/user/user/getUser")
+    public Object getUser(@RequestParam(value="username", required=true) String username);
 
 
 }

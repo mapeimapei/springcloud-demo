@@ -1,6 +1,6 @@
-package com.mapei.www.config.shiro;
+package com.mapei.www.shiro;
 
-import com.mapei.www.service.TbUserService;
+import com.mapei.www.service.ApiMainService;
 import com.mapei.www.util.JWTUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +23,7 @@ public class MyRealm extends AuthorizingRealm {
     private static final Logger LOGGER = LogManager.getLogger(MyRealm.class);
 
     @Autowired
-    TbUserService tbUserService;
+    ApiMainService apiMainService;
 
 
     /**
@@ -42,7 +42,7 @@ public class MyRealm extends AuthorizingRealm {
         String email = JWTUtil.getUsername(principals.toString());
         //User user = userServiceDao.getUser(email);
 
-        Map user = (Map) tbUserService.getUser(email);
+        Map user = (Map) apiMainService.getUser(email);
 
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         simpleAuthorizationInfo.addRole((String) user.get("admin"));
@@ -63,7 +63,7 @@ public class MyRealm extends AuthorizingRealm {
             throw new AuthenticationException("token invalid");
         }
 
-        Map user = (Map) tbUserService.getUser(email);
+        Map user = (Map) apiMainService.getUser(email);
         if (user == null) {
             throw new AuthenticationException("User didn't existed!");
         }

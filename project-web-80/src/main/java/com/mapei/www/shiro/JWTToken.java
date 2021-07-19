@@ -1,4 +1,4 @@
-package com.mapei.www.config.shiro;
+package com.mapei.www.shiro;
 
 import org.apache.shiro.authc.AuthenticationToken;
 
