@@ -24,7 +24,8 @@ zuul:
     myuser.path: /user/**
     myblog.serviceId: project-provider-blog-8002
     myblog.path: /blog/**
-
+    myshop.serviceId: project-provider-shop-8003
+    myshop.path: /shop/**
 
 
 info:

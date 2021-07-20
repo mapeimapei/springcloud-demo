@@ -25,6 +25,11 @@ public class TbUserFallbackServieImpl implements FallbackFactory<ApiMainService>
             public String demo(){return "AAA失败了";}
 
             @Override
+            public String demo2(){return "AAA失败了";}
+
+
+
+            @Override
             public List<TbUser> list(){
                 TbUser user = new TbUser();
                 user.setName("服务器内部出现错误，导致findById接口异常，客户端提供的降级信息");

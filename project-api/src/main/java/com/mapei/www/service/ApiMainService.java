@@ -29,6 +29,9 @@ public interface ApiMainService {
     @RequestMapping(value = "/gateway/blog/demo")
     public String demo();
 
+    @RequestMapping(value = "/gateway/shop/demo2")
+    public String demo2();
+
 
 }
 

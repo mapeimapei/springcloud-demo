@@ -18,6 +18,7 @@
         <module>project-eureka-7002</module>
         <module>project-zuul-gateway-9501</module>
         <module>project-provider-blog-8002</module>
+        <module>project-provider-shop-8003</module>
     </modules>
 
     <!--统一管理jar包版本-->
