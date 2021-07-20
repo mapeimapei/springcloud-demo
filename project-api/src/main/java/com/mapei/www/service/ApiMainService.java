@@ -13,15 +13,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Component
-@FeignClient(name="project-zuul-gateway-9501") //,fallbackFactory= TbUserFallbackServieImpl.class
-public interface ApiMainService extends TbUserService {
-
+@FeignClient(name="project-zuul-gateway-9501") //,configuration = FeignLogConfig.class,fallbackFactory= TbUserFallbackServieImpl.class
+public interface ApiMainService {
 
 
     @RequestMapping(value = "/gateway/user/user/getUser")
     public Object getUser(@RequestParam(value="username", required=true) String username);
 
+    @RequestMapping(value = "/gateway/user/user/list")
+    public List<TbUser> list();
 
+    @RequestMapping(value = "/gateway/user/user/get/{id}")
+    public TbUser findById(@PathVariable("id") String id);
+
+    @RequestMapping(value = "/gateway/blog/demo")
+    public String demo();
 
 
 }

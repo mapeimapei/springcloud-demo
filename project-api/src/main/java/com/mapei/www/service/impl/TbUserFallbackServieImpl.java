@@ -21,6 +21,8 @@ public class TbUserFallbackServieImpl implements FallbackFactory<ApiMainService>
                 return "AAA失败了";
             }
 
+            @Override
+            public String demo(){return "AAA失败了";}
 
             @Override
             public List<TbUser> list(){

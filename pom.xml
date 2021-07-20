@@ -17,6 +17,7 @@
         <module>project-eureka-7001</module>
         <module>project-eureka-7002</module>
         <module>project-zuul-gateway-9501</module>
+        <module>project-provider-blog-8002</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -54,6 +55,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <!--spring cloud 阿里巴巴-->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -81,6 +83,24 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring.boot.version}</version>
             </dependency>
+
+
+            <!--eureka-client
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            </dependency>
+            -->
+            <!--hystrix
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            </dependency>
+
+            -->
+
+
+
             <!--junit-->
             <dependency>
                 <groupId>junit</groupId>
@@ -102,27 +122,27 @@
             </dependency>
 
 
-            <dependency>
-                <groupId>org.apache.shiro</groupId>
-                <artifactId>shiro-spring</artifactId>
-                <version>1.3.2</version>
-            </dependency>
-            <dependency>
-                <groupId>com.auth0</groupId>
-                <artifactId>java-jwt</artifactId>
-                <version>3.2.0</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.apache.shiro</groupId>-->
+<!--                <artifactId>shiro-spring</artifactId>-->
+<!--                <version>1.3.2</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>com.auth0</groupId>-->
+<!--                <artifactId>java-jwt</artifactId>-->
+<!--                <version>3.2.0</version>-->
+<!--            </dependency>-->
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-validation</artifactId>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-starter-validation</artifactId>-->
+<!--            </dependency>-->
 
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>1.9.3</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>commons-beanutils</groupId>-->
+<!--                <artifactId>commons-beanutils</artifactId>-->
+<!--                <version>1.9.3</version>-->
+<!--            </dependency>-->
 
             <dependency>
                 <groupId>cglib</groupId>
@@ -130,12 +150,12 @@
                 <version>3.2.4</version>
             </dependency>
 
-            <!-- fastjson -->
+            <!-- fastjson
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.47</version>
-            </dependency>
+            </dependency>-->
 
         </dependencies>
     </dependencyManagement>
