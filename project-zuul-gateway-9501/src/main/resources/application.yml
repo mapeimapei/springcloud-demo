@@ -20,7 +20,7 @@ zuul:
   prefix: /gateway
   ignored-services: "*"
   routes:
-    myuser.serviceId: project-user-8001
+    myuser.serviceId: project-provider-user-8001
     myuser.path: /user/**
     myblog.serviceId: project-provider-blog-8002
     myblog.path: /blog/**
