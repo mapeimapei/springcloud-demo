@@ -14,14 +14,14 @@ import java.util.List;
 
 @Component
 @FeignClient(
-        name="project-zuul-gateway-9501",
+        name = "project-zuul-gateway-9501",
         configuration = FeignLogConfig.class,
-        fallbackFactory= UserFallbackServieImpl.class
+        fallbackFactory = UserFallbackServieImpl.class
 )
 public interface IUserService {
 
     @RequestMapping(value = "/gateway/user/user/getUser")
-    public Object getUser(@RequestParam(value="username", required=true) String username);
+    public Object getUser(@RequestParam(value = "username", required = true) String username);
 
     @RequestMapping(value = "/gateway/user/user/list")
     public List<TbUser> list();

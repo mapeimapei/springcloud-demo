@@ -13,13 +13,14 @@ import javax.validation.ValidationException;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
     IUserService iUserService;
 
 
-    @PostMapping("/api2/login")
+    @PostMapping("/login")
     public ResponseData login(@RequestBody Map params) throws IllegalAccessException {
         String email = (String) params.get("account");
         String password = (String) params.get("passwd");
@@ -38,7 +39,7 @@ public class UserController {
     }
 
     @RequiresAuthentication
-    @RequestMapping(value = "/api2/user/getUser")
+    @RequestMapping(value = "/getUser")
     public ResponseData getUser(@RequestParam(value = "username", required = true) String username) throws Exception {
         Object user = iUserService.getUser(username);
         return new ResponseData(ExceptionMsg.SUCCESS, user);
