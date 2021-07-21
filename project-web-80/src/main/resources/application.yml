@@ -4,7 +4,8 @@ server:
 spring:
   application:
     name: project-web-80
-
+  main:
+    allow-bean-definition-overriding: true
 
 eureka:
   instance:

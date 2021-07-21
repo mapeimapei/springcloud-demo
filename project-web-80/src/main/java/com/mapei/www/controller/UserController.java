@@ -2,7 +2,7 @@ package com.mapei.www.controller;
 
 import com.mapei.www.result.ExceptionMsg;
 import com.mapei.www.result.ResponseData;
-import com.mapei.www.service.ApiMainService;
+import com.mapei.www.service.IUserService;
 import com.mapei.www.util.JWTUtil;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -16,19 +16,18 @@ import java.util.Map;
 public class UserController {
 
     @Autowired
-    ApiMainService apiMainService;
+    IUserService iUserService;
 
 
     @PostMapping("/api2/login")
     public ResponseData login(@RequestBody Map params) throws IllegalAccessException {
         String email = (String) params.get("account");
         String password = (String) params.get("passwd");
-        System.out.println(email + password);
         if (password.isEmpty() || null == password) {
             throw new ValidationException("密码不能为空");
         }
         String passwd = new Md5Hash(password, "mapei", 2).toString();
-        Map user = (Map) apiMainService.getUser(email);
+        Map user = (Map) iUserService.getUser(email);
         if (user.get("passwd").equals(passwd)) {
             user.put("token", JWTUtil.sign(email, passwd));
             String[] keys = {"user_id", "name", "email", "token", "admin"};
@@ -41,7 +40,7 @@ public class UserController {
     @RequiresAuthentication
     @RequestMapping(value = "/api2/user/getUser")
     public ResponseData getUser(@RequestParam(value = "username", required = true) String username) throws Exception {
-        Object user = apiMainService.getUser(username);
+        Object user = iUserService.getUser(username);
         return new ResponseData(ExceptionMsg.SUCCESS, user);
     }
 
