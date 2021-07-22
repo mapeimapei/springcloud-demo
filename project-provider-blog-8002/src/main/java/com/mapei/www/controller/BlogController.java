@@ -11,8 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@Validated
-@RequestMapping("/cms")
+//@RequestMapping("/cms")
 public class BlogController {
 
     @Autowired

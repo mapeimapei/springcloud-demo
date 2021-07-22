@@ -1,0 +1,66 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapei.www.dao.OrderServiceDao">
+
+    <!-- 添加订单-->
+    <insert id="addOrder">
+        <!--先删除购物车里的数据-->
+
+        <if test="arg3 ==null or  arg3 ==''">
+            delete from cart
+            WHERE
+            userid=#{arg0} AND
+            productid in
+            <foreach collection='arg1'  open="(" close=")" separator=","  item="item">
+                #{item.productid}
+            </foreach>;
+        </if >
+
+        <!--插入订单-->
+        insert INTO orders
+        (
+            orderid,
+            userid,
+            orderdate,
+            status,
+            amount
+        )
+        VALUES
+        (
+            #{arg2.orderid},
+            #{arg2.userid},
+            #{arg2.orderdate},
+            #{arg2.status},
+            #{arg2.amount}
+        );
+
+        <!--插入订单详情数据-->
+        insert INTO orderdetails
+            (orderid,productid,quantity,unitcost)
+        VALUES
+        <foreach collection="arg1" item="item" separator=",">
+            (#{arg2.orderid}, #{item.productid}, #{item.quantity}, ${item.listprice * item.quantity})
+        </foreach>
+    </insert>
+
+    <select id="getOrderList" resultType="com.mapei.www.entity.Order">
+        select
+            orderid,
+            cast(orderdate AS char) as orderdate,
+            status,
+            amount
+        from orders
+        where userid = #{userid}
+        ORDER BY orderdate desc
+    </select>
+
+    <!--删除订单-->
+    <delete id="deleteOrder">
+        <!--删除订单表数据-->
+        DELETE FROM orders where orderid = #{arg1} AND userid = #{arg0};
+        <!--删除订单详情-->
+        DELETE FROM orderdetails where orderid = #{arg1};
+    </delete>
+
+</mapper>

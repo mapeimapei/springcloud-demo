@@ -15,27 +15,27 @@ import java.util.Map;
 //,configuration = FeignLogConfig.class,fallbackFactory= TbUserFallbackServieImpl.class
 public interface IBlogService {
 
-    @RequestMapping(value = "/gateway/blog/cms/demo")
+    @RequestMapping(value = "/gateway/cms/demo")
     public String demo();
 
 
     /**
      * @return
      */
-    @GetMapping("/gateway/blog/cms/post/getPosts")
+    @GetMapping("/gateway/cms/post/getPosts")
     public List<Object> getPosts();
 
     /**
      * @param id
      * @return
      */
-    @GetMapping("/gateway/blog/cms/post/getSingleById/{id}")
+    @GetMapping("/gateway/cms/post/getSingleById/{id}")
     public Object getSingleById(@PathVariable("id") String id);
 
-    @PostMapping("/gateway/blog/cms/post/addSingle")
+    @PostMapping("/gateway/cms/post/addSingle")
     public Object addSingle(Object post);
 
-    @PostMapping("/gateway/blog/cms/post/deleteSingle")
+    @PostMapping("/gateway/cms/post/deleteSingle")
     public Integer deleteSingle(Map params);
 
 }

@@ -23,7 +23,7 @@ zuul:
     myuser.serviceId: project-provider-user-8001
     myuser.path: /user/**
     myblog.serviceId: project-provider-blog-8002
-    myblog.path: /blog/**
+    myblog.path: /cms/**
     myshop.serviceId: project-provider-shop-8003
     myshop.path: /shop/**
 
