@@ -30,7 +30,6 @@ public class BlogController {
     //@RequiresAuthentication
     public ResponseData getPosts() throws Exception {
         List<Object> cs = iBlogService.getPosts();
-        System.out.println(cs);
         String[] fields = {
                 "name",
                 "id",
