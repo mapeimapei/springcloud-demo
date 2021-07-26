@@ -1,7 +1,7 @@
 # springcloud-demo
 
 
-这个自习项目的主要目的是搭建一个springCloud微服务架构，将之前用springBoot写的项目（https://github.com/mapeimapei/springBoot_myBatis_shiro）拆分为微服务模式，进而学习和熟悉springCloud。
+这个自习项目的主要目的是搭建一个springCloud微服务架构，将之前用springBoot写的项目（https://github.com/mapeimapei/springBoot_myBatis_shiro ） 拆分为微服务模式，进而学习和熟悉springCloud。
 
 主要用到的组件有Eureka、OpenFeign、Hystrix、Zuul。
 
