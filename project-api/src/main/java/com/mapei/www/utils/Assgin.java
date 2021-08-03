@@ -1,18 +1,16 @@
-package com.mapei.www.util;
+package com.mapei.www.utils;
 
 //import com.google.common.collect.Maps;
-import net.sf.cglib.beans.BeanGenerator;
-import net.sf.cglib.beans.BeanMap;
+
 import org.apache.commons.beanutils.PropertyUtilsBean;
-import org.assertj.core.util.Maps;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cglib.beans.BeanGenerator;
+import org.springframework.cglib.beans.BeanMap;
 
 import java.beans.PropertyDescriptor;
 import java.util.HashMap;
 import java.util.Map;
-//import java.util.Map;
-
 
 public class Assgin {
 

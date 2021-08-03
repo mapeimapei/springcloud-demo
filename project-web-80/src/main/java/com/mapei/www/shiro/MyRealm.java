@@ -1,7 +1,7 @@
 package com.mapei.www.shiro;
 
 import com.mapei.www.service.IUserService;
-import com.mapei.www.util.JWTUtil;
+import com.mapei.www.utils.JWTUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.shiro.authc.AuthenticationException;

@@ -3,7 +3,7 @@ package com.mapei.www.controller;
 import com.mapei.www.result.ExceptionMsg;
 import com.mapei.www.result.ResponseData;
 import com.mapei.www.service.IUserService;
-import com.mapei.www.util.JWTUtil;
+import com.mapei.www.utils.JWTUtil;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;

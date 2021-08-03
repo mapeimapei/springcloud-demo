@@ -1,10 +1,8 @@
-package com.mapei.www.util;
+package com.mapei.www.utils;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.spring.PropertyPreFilters;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class FilterResult {
 

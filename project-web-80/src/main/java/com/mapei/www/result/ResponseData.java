@@ -3,7 +3,7 @@ package com.mapei.www.result;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.mapei.www.util.FilterResult;
+import com.mapei.www.utils.FilterResult;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.mapei.www.util;
+package com.mapei.www.utils;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
